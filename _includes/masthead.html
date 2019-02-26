@@ -1,7 +1,7 @@
 {% if site.layout == 'stacked' %}
   {% assign metadata_styles = 'd-md-inline-block mr-3' %}
 {% else %}
-  {% assign metadata_styles = 'd-flex flex-items-center mb-3' %}
+  {% assign metadata_styles = 'd-flex flex-items-center mb-2' %}
 {% endif %}
 
 <img src="{{ user.avatar_url }}" class="circle mb-3" style="max-width: 150px;">
@@ -15,14 +15,14 @@
     {% if user.name %}
       <div class="{{ metadata_styles }}">
         {% octicon mark-github height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:GitHub %}
-        <a href="https://github.com/{{ user.login }}" {% if site.style == 'dark' %}class="text-white"{% endif %}>
+        <a href="https://github.com/{{ user.login }}" target="_blank" rel="noopener" {% if site.style == 'dark' %}class="text-white"{% endif %}>
           @{{ user.login }}
         </a>
       </div>
     {% endif %}
     {% if user.email %}
       <div class="{{ metadata_styles }}">
-        {% octicon mail height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:email %}
+        {% octicon mail height:20 width:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:email %}
         <a href="mailto:{{ user.email }}" {% if site.style == 'dark' %}class="text-white"{% endif %}>
           {{ user.email }}
         </a>
@@ -30,12 +30,20 @@
     {% endif %}
     {% if user.location %}
       <div class="{{ metadata_styles }} {% if site.style == 'dark' %}text-white{% endif %}">
-        {% octicon location height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:Location %}
+        {% octicon location height:20 width:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:Location %}
         {{ user.location }}
       </div>
     {% endif %}
+    <div class="{{ metadata_styles }}">
+      {% octicon link height:20 width:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:website %}
+      <a href="https://marcusolsson.me" target="_blank" rel="noopener" {% if site.style == 'dark' %}class="text-white"{% endif %}>
+        https://marcusolsson.me
+      </a>
+    </div>
     {% if user.hireable %}
-      <span title="Hire me" class="d-inline-block f5 rounded-2 text-white bg-green py-1 px-2">Available for hire</span>
+      <div class="mt-4">
+        <a href="https://marcusolsson.me/kontakta-marcus-olsson" target="_blank" rel="noopener" class="d-inline-block f4 rounded-2 text-white bg-green py-1 px-2">Available for hire</a>
+      </div>
     {% endif %}
   </div>
 {% endif %}

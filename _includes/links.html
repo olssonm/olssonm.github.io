@@ -1,0 +1,9 @@
+<h2 {% if site.style == 'dark' %}class="text-white"{% endif %}>Links</h2>
+<p class="f4 mb-4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">Other places where I can be found.</p>
+<div class="d-flex flex-wrap gutter-condensed mb-4">
+  {% for link in site.links limit: 6 %}
+    <div class="col-6 col-md-12 col-lg-6 col-xl-4 mb-3">
+      {% include link-card.html %}
+    </div>
+  {% endfor %}
+</div>

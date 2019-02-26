@@ -1,0 +1,8 @@
+{% if link.web_url %}
+  <a href="{{ link.web_url }}" target="_blank" rel="noopener" class="github-component position-relative hover-grow height-full no-underline d-flex flex-column flex-justify-center text-center border border-gray-light rounded-1 bg-white p-5">
+    <p class="f3 lh-condensed text-center link-gray-dark mb-0 mt-1">{{ link.name }}</p>
+    {% if link.description %}
+      <p class="f5 text-gray text-center mb-0 mt-1">{{ link.description }}</p>
+    {% endif %}
+  </a>
+{% endif %}
