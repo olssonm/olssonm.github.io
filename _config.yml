@@ -7,9 +7,6 @@ plugins:
 
 permalink: /:year/:month/:day/:title/
 
-user:
-  website: https://marcusolsson.me
-
 defaults:
   -
     scope:

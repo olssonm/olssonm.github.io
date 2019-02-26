@@ -51,6 +51,18 @@
         {% unless posts_total == 0 %}
           {% include thoughts.html %}
         {% endunless %}
+
+        <div class="d-flex flex-wrap gutter-condensed mt-8">
+          <div class="col-12">
+              <p class="f5 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">
+                  Built using Jekyll and github/personal-website.
+              </p>
+              <p class="f5 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">
+                  &copy; 2019 – <a href="https://marcusolsson.me" target="_blank" rel="noopener" class="{% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">Marcus Olsson</a> / <a href="https://opposablethumbs.se/" target="_blank" rel="noopener" class="{% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">Opposable Thumbs AB</a>
+              </p>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
